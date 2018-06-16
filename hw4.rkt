@@ -13,13 +13,11 @@
 
 ;3
 (define (list-nth-mod xs n)
-  (if (< n 0)
-      (error "list-nth-mod: negative number")
-      (if (null? xs)
-          (error "list-nth-mod: empty list")
-          (if (= n 0)
-              (car xs)
-              (list-nth-mod (cdr xs) (- n 1))))))
+  (cond [(< n 0) (error "list-nth-mod: n must be non-negative")]
+        [(null? xs) (error "list-nth-mod: list must be non-empty")]
+        [#t (let* ([len (length xs)]
+                   [index (remainder n len)])
+              (car (list-tail xs index)))]))
 
 ;4
 (define (stream-for-n-steps s n)
