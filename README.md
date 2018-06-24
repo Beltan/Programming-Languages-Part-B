@@ -1,2 +1,2 @@
-# Programming-Languages-Part-B-Week-1
-Check PDFs inside
+# Programming-Languages-Part-B
+Programming Languages Part B course from Coursera - University of Washington. Check PDFs inside
